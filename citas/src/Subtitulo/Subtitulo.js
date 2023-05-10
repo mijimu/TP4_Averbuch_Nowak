@@ -4,4 +4,4 @@ function Subtitulo({ texto = 'Default'}){
     );
 }
 
-export default Titulo;
+export default Subtitulo;
