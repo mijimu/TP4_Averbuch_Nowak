@@ -1,0 +1,46 @@
+input{
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
+
+form{
+    display: block;
+    margin-bottom: 2.5rem;
+}
+
+.u-full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bttn{
+    color: #FFF;
+    background-color: #1EAEDB;
+    border-color: transparent;
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}

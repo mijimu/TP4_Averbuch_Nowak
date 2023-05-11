@@ -1,3 +1,5 @@
+import './Subtitulo.css';
+
 function Subtitulo({ texto = 'Default'}){
     return (
         <h3 className="texto">{texto}</h3>
