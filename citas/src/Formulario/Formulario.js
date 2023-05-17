@@ -1,6 +1,7 @@
 import './Formulario.css';
 
-function Formulario({texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date = 'Fecha', time = 'Hora', textoBigger = 'Sintomas', submitear = 'Agregar Cita'}) {
+
+function Formulario({texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date = 'Fecha', time = 'Hora', textoBigger = 'Sintomas', submitear = 'Agregar Cita'}, agregarCita) {
     return (
         <form onSubmit={ (e) => agregarCita(e)}>
             <label className="texto1  mb-1">{texto1}</label>
