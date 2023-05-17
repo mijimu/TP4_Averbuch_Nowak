@@ -1,4 +1,4 @@
-
+import{useState} from 'react';
 import './App.css';
 import Cita  from './Cita/Cita';
 import Formulario  from './Formulario/Formulario';
@@ -6,6 +6,21 @@ import Subtitulo  from './Subtitulo/Subtitulo';
 import Titulo  from './Titulo/Titulo';
 
 function App() {
+  
+  const [citas, setCitas] = useState([]);
+  
+    const agregarCita = evento => {
+    evento.preventDefault();
+    setCitas(
+      [
+        ...citas,
+       
+      ]
+    );
+    
+  }
+
+
   return (
     <>
       <Titulo texto="ADMINISTADOR DE PACIENTES" />
