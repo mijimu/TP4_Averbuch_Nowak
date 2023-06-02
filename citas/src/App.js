@@ -7,15 +7,9 @@ import Titulo from './Titulo/Titulo';
 
 function App() {
 
-  const [id, setId] = useState(0);
-  const declareId = () => {
-    setId(Math.random);
-    setId(Math.floor(Math.random()));
-    return id;
-  }
-
   const deleteById = (id) => {
-    if (id !== null) {
+    console.log(id);
+    if (id!== null) {
       setCitaArray((cita) =>
         cita.filter((citaArray) => citaArray.id === id)
       );
@@ -23,7 +17,9 @@ function App() {
   }
 
   const [citaArray, setCitaArray] = useState([]);
+
   const nuevaCita = (citaEnviada) => {
+
     const agregar = [...citaArray, citaEnviada]
     setCitaArray(agregar)
     console.log(citaEnviada)
@@ -39,12 +35,12 @@ function App() {
           <div className="col-md-1"></div>
           <div className="col-md-5">
             <Subtitulo texto="CREAR MI CITA" />
-            <Formulario sendCitas={nuevaCita} sendId={declareId} />
+            <Formulario sendCitas={nuevaCita} />
           </div>
           <div className="col-md-5">
             <Subtitulo className="text-justify" texto="ADMINISTRA TUS CITAS" />
             {citaArray.map(({ id, nombre, duenio, fecha, hora, sintomas }) => (
-              <Cita id={declareId} nombre={nombre} duenio={duenio} fecha={fecha} hora={hora} sintomas={sintomas} sendId={deleteById}></Cita>
+              <Cita id={id} nombre={nombre} duenio={duenio} fecha={fecha} hora={hora} sintomas={sintomas} eliminar={deleteById}></Cita>
             ))}
 
             {/*<Cita nombre="Nina" duenio="Martin" fecha="2021-08-05" hora="08:20" sintomas="Le duele la pierna" />

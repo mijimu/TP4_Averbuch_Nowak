@@ -2,7 +2,7 @@ import './Formulario.css';
 import {useState} from 'react';
 
 
-function Formulario({ texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date = 'Fecha', time = 'Hora', textoBigger = 'Sintomas', submitear = 'Agregar Cita' , sendCitas, sendId}) {
+function Formulario({ texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date = 'Fecha', time = 'Hora', textoBigger = 'Sintomas', submitear = 'Agregar Cita' , sendCitas}) {
 
     const [id, setId] = useState(0);
     const [nombre, setNombre] = useState('');
@@ -27,9 +27,15 @@ function Formulario({ texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date 
         setSintomas(evento.target.value)
     }
 
+    const idHandler = () => {
+        const timeForId = new Date().getTime();
+        console.log(timeForId);
+        setId(timeForId);
+    }
+
     const buttonOnsubmitHandler = evento => {
         evento.preventDefault();
-        setId(sendId.value);
+        idHandler();
         console.log('enviando...')
         const nuevaCita = {
             id: id,
@@ -38,6 +44,7 @@ function Formulario({ texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date 
             fecha: fecha,
             hora: hora,
             sintomas: sintomas,
+            eliminar: false,
         }
 
         sendCitas(nuevaCita);
