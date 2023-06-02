@@ -10,14 +10,15 @@ function App() {
   const [id, setId] = useState(0);
   const declareId = () => {
     setId(Math.random);
+    setId(Math.floor(Math.random()));
     return id;
   }
 
-  const boolEliminar = (bool) => {
-    if(bool){
+  const deleteById = (id) => {
+    if (id !== null) {
       setCitaArray((cita) =>
-      cita.filter((citaArray) => citaArray.id === id)
-    );
+        cita.filter((citaArray) => citaArray.id === id)
+      );
     }
   }
 
@@ -43,7 +44,7 @@ function App() {
           <div className="col-md-5">
             <Subtitulo className="text-justify" texto="ADMINISTRA TUS CITAS" />
             {citaArray.map(({ id, nombre, duenio, fecha, hora, sintomas }) => (
-              <Cita id={id} nombre={nombre} duenio={duenio} fecha={fecha} hora={hora} sintomas={sintomas} sendEliminar={boolEliminar}></Cita>
+              <Cita id={declareId} nombre={nombre} duenio={duenio} fecha={fecha} hora={hora} sintomas={sintomas} sendId={deleteById}></Cita>
             ))}
 
             {/*<Cita nombre="Nina" duenio="Martin" fecha="2021-08-05" hora="08:20" sintomas="Le duele la pierna" />
