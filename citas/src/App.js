@@ -7,12 +7,11 @@ import Titulo from './Titulo/Titulo';
 
 function App() {
 
-  const deleteById = (id) => {
-    console.log(id);
-    if (id!== null) {
-      setCitaArray((cita) =>
-        cita.filter((citaArray) => citaArray.id === id)
-      );
+  const deleteById = idEnv => {
+    console.log(idEnv);
+    if (idEnv !== null) {
+      const arrayBorrado = citaArray.filter(item => item.id !== idEnv); // this will remove the item which matches the id
+      setCitaArray(arrayBorrado);
     }
   }
 

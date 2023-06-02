@@ -44,8 +44,10 @@ function Formulario({ texto1 = 'Nombre Mascota', texto2 = 'Nombre Dueño', date 
             fecha: fecha,
             hora: hora,
             sintomas: sintomas,
-            eliminar: false,
+            eliminar: null,
         }
+
+        console.log(nuevaCita.id)
 
         sendCitas(nuevaCita);
 

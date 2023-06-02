@@ -5,6 +5,7 @@ function Cita({ id, nombre, duenio, fecha, hora, sintomas, eliminar }) {
 
     //const [botonEliminar, setBotonEliminar] = useState(false);
     
+    console.log(id);
     
     const handleDelete = (e) => {
         alert("Se eliminará la cita!");
